@@ -22,7 +22,7 @@ public class Calculate {
   }
 
   public BigDecimal getOrderTotal(List<Product> productList) {
-    return calculations.calculate(productList).setScale(4, 4).multiply(BigDecimal.valueOf(1-country.getDiscount()));
+    return calculations.calculate(productList).multiply(BigDecimal.valueOf(1-country.getDiscount())).setScale(2, 2);
   }
 
 }
