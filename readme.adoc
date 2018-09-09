@@ -20,7 +20,7 @@ toc::[]
 
 ### Alternatywy
 
-ant, gradle, npm(JS), nuget+MSBuild(C#)
+ant, gradle, npm+webpack(JS), nuget+MSBuild(C#) + wiele innych
 
 ### Archetypy
 
@@ -221,7 +221,7 @@ można ich później użyć w innych miejscach w pom.xml np.
 
 #### Zadanie 5
 
--- Przenieś numery wersji aplikacji do properties oraz ścieżkę do testów
+-- Przenieś numery wersji zależności do properties oraz ścieżkę do testów
 które mają się uruchamiać.
 
 -- Dodaj nową properties o nazwie system.variable w którym wartością będzie `localhost`
@@ -297,7 +297,7 @@ co oznacza, że jeśli nie podamy żadnego profilu ten będzie uruchomiony domy�
 Uruchom polecenie `mvn clean install` a następnie przeanalizuj log oraz folder target.
 Polecenie install buduje aplikacje, uruchamia na niej testy a następnie zbudowny artefakt instaluje w lokalnym repozytorium maven'a.
 Lokalne repozytorium znajduje się w katalogu domowym użytkownika w folderze `.m2`
-Za każdym razem gdy budujemy aplikację i ściągamy zalerzności są one tam zapisywane/ cache'owane i przy następnym buildzie jeśli
+Za każdym razem gdy budujemy aplikację i ściągamy zależności są one tam zapisywane/ cache'owane i przy następnym buildzie jeśli
 zależności/dependency istnieje w lokalnym repo nie jest pobierane.
 Można wymusić pobranie używająć parametru -U od update
 `mvn clean install -U`
