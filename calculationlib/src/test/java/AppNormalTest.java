@@ -1,19 +1,19 @@
-package com.infoshare.bz;
-
 import com.infoshare.bz.calculations.Calculate;
 import com.infoshare.bz.calculations.CalculationsType;
 import com.infoshare.bz.data.Product;
+import org.junit.Test;
 
 import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.List;
 
 import static com.infoshare.bz.calculations.CountryDiscounts.PL;
+import static org.assertj.core.api.Assertions.assertThat;
 
-public class AppTest {
+public class AppNormalTest {
 
-  public static void main(String[] args) {
-
+@Test
+public void CalculateNormal() {
     List<Product> products = Arrays.asList(
             new Product()
                     .setName("p1")
@@ -27,13 +27,14 @@ public class AppTest {
                     .setQuantity(5)
     );
 
-    System.out.println("BUSSINES: " + new Calculate(CalculationsType.BUSINESS)
-            .setCountry(PL)
-            .getOrderTotal(products));
 
-    System.out.println("NORMAL: " + new Calculate(CalculationsType.NORMAL)
+    System.out.println("Env is: " + System.getProperty("system.env"));
+    assertThat(new Calculate(CalculationsType.NORMAL)
             .setCountry(PL)
-            .getOrderTotal(products));
+            .getOrderTotal(products).doubleValue()).isEqualTo(1900.0);
+        }
 
-  }
+
+
 }
+
