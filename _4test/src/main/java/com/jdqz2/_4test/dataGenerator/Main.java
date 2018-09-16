@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
 		RegistrationDataGenerator registrationDataGenerator = new RegistrationDataGenerator();
-		RegistrationFormData generatedData = registrationDataGenerator.generate();
+		RegistrationFormData generatedData = registrationDataGenerator.regGenerate();
 		System.out.println(generatedData.getFirstName());
 		System.out.println(generatedData.getLastName());
 		System.out.println(generatedData.getCountry());
