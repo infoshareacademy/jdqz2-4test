@@ -1,12 +1,12 @@
 package com.jdqz2._4test.dataGenerator;
 
 public class RegistrationFormData {
-    private String firstName;
-    private String lastName;
-    private String country;
-    private String stateProvince;
-    private String emailAddress;
-    private String password;
+    protected String firstName;
+    protected String lastName;
+    protected String country;
+    protected String stateProvince;
+    protected String emailAddress;
+    protected String password;
     // można użyć na potrzeby testów
     //private String checkPassword;
 

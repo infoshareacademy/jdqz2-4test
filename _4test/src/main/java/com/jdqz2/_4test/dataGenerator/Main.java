@@ -4,13 +4,26 @@ public class Main {
 
     public static void main(String[] args) {
 		RegistrationDataGenerator registrationDataGenerator = new RegistrationDataGenerator();
-		RegistrationFormData generatedData = registrationDataGenerator.generate();
-		System.out.println(generatedData.getFirstName());
-		System.out.println(generatedData.getLastName());
-		System.out.println(generatedData.getCountry());
-		System.out.println(generatedData.getStateProvince());
-		System.out.println(generatedData.getEmailAddress());
-		System.out.println(generatedData.getPassword());
-		System.out.println(generatedData.getPassword());
+		RegistrationFormData generatedRegistrationData = registrationDataGenerator.generate();
+		System.out.println(generatedRegistrationData.getFirstName());
+		System.out.println(generatedRegistrationData.getLastName());
+		System.out.println(generatedRegistrationData.getCountry());
+		System.out.println(generatedRegistrationData.getStateProvince());
+		System.out.println(generatedRegistrationData.getEmailAddress());
+		System.out.println(generatedRegistrationData.getPassword());
+		System.out.println("---------------------------");
+		BillingDataGenerator billingDataGenerator = new BillingDataGenerator();
+		BillingFormData generatedBillingData = billingDataGenerator.generate();
+		System.out.println(generatedBillingData.getFirstName());
+		System.out.println(generatedBillingData.getLastName());
+		System.out.println(generatedBillingData.getCountry());
+		System.out.println(generatedBillingData.getStateProvince());
+		System.out.println(generatedBillingData.getEmailAddress());
+		System.out.println(generatedBillingData.getBillingCompany());
+		System.out.println(generatedBillingData.getStreetAdress());
+		System.out.println(generatedBillingData.getCity());
+		System.out.println(generatedBillingData.getPostalCode());
+		System.out.println(generatedBillingData.getPhoneNumber());
+
     }
 }
