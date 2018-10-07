@@ -1,4 +1,4 @@
-package com.jdqz2._4test.tests;
+package com.jdqz2._4test.test.java.com.jdqz2._4test;
 import com.jdqz2._4test.utils.driver.WebDriverCreators;
 import com.jdqz2._4test.utils.driver.WebDriverProvider;
 import org.junit.Before;
@@ -16,11 +16,14 @@ public class SearchTest {
     public void setUp() {
         driver = new WebDriverProvider(WebDriverCreators.CHROME).getDriver();
         driver.manage().window().maximize();
-        driver.get("");
+        driver.get("http://4test.jdqz2.is-academy.pl/shop");
 
 
     }
 
-    @Test
+
+
+
+}
 
 
