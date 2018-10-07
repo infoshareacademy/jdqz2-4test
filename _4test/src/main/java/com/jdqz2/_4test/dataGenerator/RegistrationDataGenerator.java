@@ -15,7 +15,7 @@ public class RegistrationDataGenerator extends RandomGenerator {
 
         rData.setFirstName(getRandom(firstNameList))
                 .setLastName(getRandom(lastNameList))
-                .setCountry(getRandom(countryList))
+                .setCountry(getRandom(registrationCountryList))
                 .setStateProvince(getRandom(stateProvinceList))
                 .setPassword(getRandom(passwordList))
                 .setEmailAddress(rData.getFirstName().toLowerCase() + "." + rData.getLastName().toLowerCase() + random.nextInt(999) + "@example.com");

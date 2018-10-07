@@ -8,7 +8,7 @@ public class RandomGenerator {
     public Random random = new Random();
     public ArrayList<String> firstNameList = new ArrayList<>(Arrays.asList("Ania","Kamil","Olek","Imie2","Kasia","Zosia","Imię1"));
     public ArrayList<String> lastNameList = new ArrayList<>(Arrays.asList("Kowal","Nowak","Kowalski","Nazwisko","LastName","Dziuba"));
-    public ArrayList<String> countryList = new ArrayList<>(Arrays.asList(
+    public ArrayList<String> registrationCountryList = new ArrayList<>(Arrays.asList(
             "DZ", "AL", "AR", "AU", "AT", "BH", "BY", "BE", "BO", "BA", "BR", "BG", "CA", "CL", "CN", "CO", "CR", "HR",
             "CU", "CY", "CZ", "DK", "DO", "EC", "EG", "SV", "EE", "FI", "FR", "DE", "GR", "GT", "HN", "HK", "HU", "IS",
             "IN", "ID", "IQ", "IE", "IL", "IT", "JP", "JO", "KR", "KW", "LV", "LB", "LY", "LT", "LU", "MK", "MY", "MT",
