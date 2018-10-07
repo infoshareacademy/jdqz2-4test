@@ -1,4 +1,4 @@
-package utils.waits;
+package com.jdqz2._4test.utils.waits;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

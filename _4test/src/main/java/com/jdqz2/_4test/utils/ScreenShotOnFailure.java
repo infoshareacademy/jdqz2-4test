@@ -1,4 +1,4 @@
-package utils;
+package com.jdqz2._4test.utils;
 
 import org.apache.commons.io.FileUtils;
 import org.junit.rules.TestWatcher;
