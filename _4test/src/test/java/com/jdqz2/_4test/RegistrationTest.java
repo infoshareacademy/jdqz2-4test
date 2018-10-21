@@ -22,8 +22,8 @@ public class RegistrationTest {
         driver.get("http://4test.jdqz2.is-academy.pl/shop/customer/registration.html");
     }
 
-    @After
-    public void tearDown(){ driver.close();}
+//    @After
+//    public void tearDown(){ driver.close();}
 
 
     @Test

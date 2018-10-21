@@ -53,6 +53,8 @@ public class RegistrationPage {
         mailInputField.sendKeys(registrationFormData.getEmailAddress());
         passwordField.click();
         passwordField.sendKeys(registrationFormData.getPassword());
+        repeatPasswordField.click();
+        repeatPasswordField.sendKeys(registrationFormData.getPassword());
         hitCreate.click();
     }
 
