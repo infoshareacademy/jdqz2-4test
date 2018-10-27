@@ -12,7 +12,7 @@ public class ShoppingCartPage {
     private WebElement removeItemCartPage;
 
     @FindBy(xpath = "//a[text() = 'Recalculate']")
-    private WebElement recalcutaeButton;
+    private WebElement recalculateButton;
 
     @FindBy(xpath = "//a[text() = 'Continue shopping']")
     private WebElement continueShoppingButton;
@@ -20,12 +20,4 @@ public class ShoppingCartPage {
     @FindBy(xpath = "//a[text() = 'Proceed to checkout']")
     private WebElement proceedButton;
 
-    @FindBy(xpath = "//span[@class = 'lnr lnr-cart']")
-    private WebElement hoverButtonCartMainPage;
-
-    @FindBy(xpath = "//button[@productid = '4']")
-    private WebElement removeProductFromCartMainPage;
-
-    @FindBy(xpath = "//i[@class = 'fa fa-angle-right']")
-    private WebElement goToCheckoutMainPage;
 }
