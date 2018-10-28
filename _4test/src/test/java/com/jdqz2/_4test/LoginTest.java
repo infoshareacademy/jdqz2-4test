@@ -13,6 +13,18 @@ import org.openqa.selenium.WebDriver;
 
 public class LoginTest {
 
+    private WebDriver driver;
+    private RegistrationFormData registrationFormData;
+
+    @Before
+    public void setUp(){
+        driver = new WebDriverProvider(WebDriverCreators.CHROME).getDriver();
+        driver.manage().window().maximize();
+        driver.get("http://4test.jdqz2.is-academy.pl/shop/customer/registration.html");
+    }
+
+
+
 
 
 
