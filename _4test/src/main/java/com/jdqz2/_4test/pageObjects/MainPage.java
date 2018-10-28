@@ -1,8 +1,9 @@
 package com.jdqz2._4test.pageObjects;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class MainPage {
     @FindBy(xpath = "//a[@class = 'addToCart' and @productid = '4']" )
@@ -23,9 +24,11 @@ public class MainPage {
     @FindBy(xpath = "//i[@class = 'fa fa-angle-right']")
     private WebElement goToCheckoutMainPage;
 
-    @FindBy(xpath = "//a[@onclick = 'viewShoppingCartPage();']")
-    private WebElement checkoutButtonFromShoppingCartHoverButton;
-
+    private WebDriver driver;
+    public MainPage(WebDriver driver) {
+        this.driver = driver;
+        PageFactory.initElements(driver, this);
+    }
     public void  addToCartFirstBagMain(){
         addToCartFirstBag.click();
     }
@@ -38,8 +41,11 @@ public class MainPage {
     public void  addToCartFourthBagMain(){
         addToCartFourthBag.click();
     }
-    public void  goToCheckout(){
-
-        checkoutButtonFromShoppingCartHoverButton.click();
+    public void  goToCheckoutMainHower() {
+        shoppingCartHoverButton.click();
+    }
+    public void  goToCheckoutMainClick(){
+        goToCheckoutMainPage.click();
     }
 }
+
