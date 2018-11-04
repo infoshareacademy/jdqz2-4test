@@ -1,8 +1,10 @@
 package com.jdqz2._4test.pageObjects;
 
 import com.jdqz2._4test.dataGenerator.RegistrationFormData;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class RegistrationPage {
 
@@ -30,6 +32,31 @@ public class RegistrationPage {
     @FindBy(xpath = "//button[text() = 'Create an account']")
     private WebElement hitCreate;
 
+    private WebDriver driver;
+
+    public RegistrationPage(WebDriver driver){
+        this.driver = driver;
+        PageFactory.initElements(driver,this);
+    }
+
+    public void registerToPage(RegistrationFormData registrationFormData){
+        nameField.click();
+        nameField.sendKeys(registrationFormData.getFirstName());
+        lastNameField.click();
+        lastNameField.sendKeys(registrationFormData.getLastName());
+        countryList.click();
+        countryList.sendKeys(registrationFormData.getCountry());
+        countryList.click();
+        stateInputField.click();
+        stateInputField.sendKeys(registrationFormData.getStateProvince());
+        mailInputField.click();
+        mailInputField.sendKeys(registrationFormData.getEmailAddress());
+        passwordField.click();
+        passwordField.sendKeys(registrationFormData.getPassword());
+        repeatPasswordField.click();
+        repeatPasswordField.sendKeys(registrationFormData.getPassword());
+        hitCreate.click();
+    }
 
 
 }
