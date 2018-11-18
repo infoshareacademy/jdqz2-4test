@@ -2,6 +2,7 @@ package com.jdqz2._4test.pageObjects;
 
 import com.jdqz2._4test.dataGenerator.LoginTestFormData;
 import com.jdqz2._4test.utils.waits.CustomWait;
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -57,8 +58,8 @@ public class LoginPage {
     @FindBy(xpath = "//button[text() = 'Create an account']")
     private WebElement hitCreate;
 
-    @FindBy(xpath = "//div[@id = 'loginError']")
-    private WebElement loginErrorPopUp;
+    @FindBy(xpath = "//div[@id = 'main-content']")
+    private WebElement loginSuccessMenu;
 
 
     public LoginPage(WebDriver driver) {
@@ -80,7 +81,12 @@ public class LoginPage {
         userPasswordInput.sendKeys(loginData.getPasswordLogin());
         hitSignIn.click();
 
+        customWait.waitForElementToBeVisible(loginSuccessMenu);
 
+    }
+
+    public void assertLoginWasSuccessful() {
+        Assert.assertEquals(loginSuccessMenu.isDisplayed(), true);
     }
 
 }

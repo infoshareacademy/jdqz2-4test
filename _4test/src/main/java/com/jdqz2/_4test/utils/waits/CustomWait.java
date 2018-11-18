@@ -39,10 +39,5 @@ CustomWait {
         WebElement waitForElement = wait.until(ExpectedConditions.visibilityOf(element));
     }
 
-    public void waitForElementPresence(WebElement element){
-        WebDriverWait wait = new WebDriverWait(driver, EXPLICIT_WAIT_TIMEOUT);
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@id = 'loginError']")));
-    }
-
 
 }

@@ -15,7 +15,11 @@ import org.openqa.selenium.WebDriver;
 public class LoginTest {
 
     private WebDriver driver;
-    private RegistrationFormData registrationFormData;
+
+    LoginTestFormData loginData = new LoginTestFormData();
+    LoginPage loginPage;
+
+
 
 
     @Before
@@ -23,21 +27,22 @@ public class LoginTest {
         driver = new WebDriverProvider(WebDriverCreators.CHROME).getDriver();
         driver.manage().window().maximize();
         driver.get("http://4test.jdqz2.is-academy.pl/shop/");
+        loginPage = new LoginPage(driver);
 
     }
+
 
     @Test
     public void test() {
 
-
-        LoginTestFormData loginData = new LoginTestFormData();
-        new LoginPage(driver).loginTest(loginData);
+        loginPage.loginTest(loginData);
+        loginPage.assertLoginWasSuccessful();
 
     }
 
     @After
     public void tearDown(){
-        
+
         driver.close();
     }
 
