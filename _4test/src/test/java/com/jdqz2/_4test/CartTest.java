@@ -9,9 +9,10 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class CartTest {
-    private static final String PAGE_URL = "http://localhost:4160/shop/";
+    private static final String PAGE_URL = "http://4test.jdqz2.is-academy.pl/shop";
     private static WebDriver driver;
     private CustomWait customWait;
 
@@ -34,8 +35,11 @@ public class CartTest {
     @Test
     public void AddItemsToCart() {
         mainPage.addToCartFirstBagMain();
-        mainPage.addToCartSecondBagMain();
+        /*mainPage.addToCartSecondBagMain();
         mainPage.addToCartThirdBagMain();
+        mainPage.addToCartFourthBagMain();
+        mainPage.goToCheckoutMainHower();
+        mainPage.goToCheckoutMainClick();*/
     }
 
 
