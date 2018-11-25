@@ -1,6 +1,7 @@
 package com.jdqz2._4test.pageObjects;
 
 import com.jdqz2._4test.dataGenerator.RegistrationFormData;
+import com.jdqz2._4test.utils.waits.CustomWait;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -33,9 +34,11 @@ public class RegistrationPage {
     private WebElement hitCreate;
 
     private WebDriver driver;
+    private CustomWait wait;
 
     public RegistrationPage(WebDriver driver){
         this.driver = driver;
+        wait = new CustomWait(driver);
         PageFactory.initElements(driver,this);
     }
 
@@ -53,7 +56,7 @@ public class RegistrationPage {
         mailInputField.sendKeys(registrationFormData.getEmailAddress());
         passwordField.click();
         passwordField.sendKeys(registrationFormData.getPassword());
-        repeatPasswordField.click();
+        wait.waitForElementToBeClickable(repeatPasswordField);
         repeatPasswordField.sendKeys(registrationFormData.getPassword());
         hitCreate.click();
     }
