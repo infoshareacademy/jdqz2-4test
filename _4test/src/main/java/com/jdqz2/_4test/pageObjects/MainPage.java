@@ -9,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 import java.util.List;
 
 public class MainPage {
-    @FindBy(xpath = "//h3[contains(@text = 'Vintage courier bag' and @productid='9']/following-sibling::h3/a[@class = 'addToCart']")
+    @FindBy(xpath = "//a[@productid = '4']" )
     private WebElement addToCartFirstBag;
 
     @FindBy(xpath = "//a[@productid = '2']" )
@@ -27,6 +27,9 @@ public class MainPage {
     @FindBy(xpath = "//i[@class = 'fa fa-angle-right']")
     private WebElement goToCheckoutMainPage;
 
+    @FindBy(xpath = "//section[@class = 'products-grid']")
+    private WebElement loagingMainPageElement;
+
     private CustomWait customWait;
 
     private WebDriver driver;
@@ -36,6 +39,7 @@ public class MainPage {
         PageFactory.initElements(driver, this);
     }
     public void  addToCartFirstBagMain(){
+        customWait.waitForElementToBeVisible(loagingMainPageElement);
         customWait.waitForElementToBeVisible(addToCartFirstBag);
         customWait.waitForElementToBeClickable(addToCartFirstBag);
         addToCartFirstBag.click();
@@ -58,4 +62,3 @@ public class MainPage {
     }
 
 }
-

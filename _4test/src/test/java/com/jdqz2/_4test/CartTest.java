@@ -35,11 +35,11 @@ public class CartTest {
     @Test
     public void AddItemsToCart() {
         mainPage.addToCartFirstBagMain();
-        /*mainPage.addToCartSecondBagMain();
+        mainPage.addToCartSecondBagMain();
         mainPage.addToCartThirdBagMain();
         mainPage.addToCartFourthBagMain();
         mainPage.goToCheckoutMainHower();
-        mainPage.goToCheckoutMainClick();*/
+        mainPage.goToCheckoutMainClick();
     }
 
 
