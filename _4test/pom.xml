@@ -20,7 +20,7 @@
         </plugins>
     </build>
 
-    <properties/>
+<properties/>
 
 <dependencies>
     <dependency>
