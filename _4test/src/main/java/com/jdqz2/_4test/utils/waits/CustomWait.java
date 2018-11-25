@@ -1,5 +1,6 @@
 package com.jdqz2._4test.utils.waits;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -17,6 +18,7 @@ CustomWait {
     private static final int DEFAULT_TIMEOUT_IN_SEC = 20;
     private static final int PULLING_TIMEOUT_IN_SEC = 5;
     private static final int EXPLICIT_WAIT_TIMEOUT = 10;
+    private static final int SPINNER_CLOSE_WAIT = 4;
 
     private WebDriver driver;
 
@@ -37,6 +39,13 @@ CustomWait {
     public void waitForElementToBeVisible(WebElement element) {
         WebDriverWait wait = new WebDriverWait(driver, EXPLICIT_WAIT_TIMEOUT);
         WebElement waitForElement = wait.until(ExpectedConditions.visibilityOf(element));
+    }
+
+    public void waitForSpinnerDisappear(){
+        WebDriverWait wait = new WebDriverWait(driver, SPINNER_CLOSE_WAIT);
+        Boolean waitForElement = wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//div[@class = 'loadingoverlay']")));
+
+
     }
 
 

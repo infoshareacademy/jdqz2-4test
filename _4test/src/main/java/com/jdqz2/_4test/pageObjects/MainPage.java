@@ -2,6 +2,7 @@ package com.jdqz2._4test.pageObjects;
 
 import com.jdqz2._4test.utils.waits.CustomWait;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -36,6 +37,9 @@ public class MainPage {
     @FindBy(xpath = "//h2[text() = 'Laptop bags']" )
     private WebElement laptopBagsBanner;
 
+    @FindBy(xpath = "//div[@class = 'loadingoverlay']")
+    private WebElement loadingSpinner;
+
     public MainPage(WebDriver driver) {
 
         customWait = new CustomWait(driver);
@@ -48,12 +52,18 @@ public class MainPage {
 
         customWait.waitForElementToBeClickable(handbagsButton);
         handbagsButton.click();
+        customWait.waitForElementToBeVisible(handbagsBanner);
+        customWait.waitForSpinnerDisappear();
         Assert.assertEquals(handbagsBanner.isDisplayed(), true);
+        customWait.waitForElementToBeClickable(beachBagsButton);
         beachBagsButton.click();
+        customWait.waitForSpinnerDisappear();
         Assert.assertEquals(beachBagsBanner.isDisplayed(), true);
         bagsButton.click();
+        customWait.waitForSpinnerDisappear();
         Assert.assertEquals(bagsBanner.isDisplayed(), true);
         laptopBagsButton.click();
+        customWait.waitForSpinnerDisappear();
         Assert.assertEquals(laptopBagsBanner.isDisplayed(), true);
 
     }
