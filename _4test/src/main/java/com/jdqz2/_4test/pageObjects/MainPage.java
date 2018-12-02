@@ -1,6 +1,7 @@
 package com.jdqz2._4test.pageObjects;
 
 import com.jdqz2._4test.utils.waits.CustomWait;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -38,22 +39,34 @@ public class MainPage {
         customWait = new CustomWait(driver);
         PageFactory.initElements(driver, this);
     }
-    public void  addToCartFirstBagMain(){
-        customWait.waitForElementToBeVisible(loagingMainPageElement);
-        customWait.waitForElementToBeVisible(addToCartFirstBag);
+    public void  addToCartFirstBagMain() {
+        customWait.waitForSpinnerToDisappear();
         customWait.waitForElementToBeClickable(addToCartFirstBag);
+        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();", addToCartFirstBag);
         addToCartFirstBag.click();
     }
     public void  addToCartSecondBagMain(){
+        customWait.waitForSpinnerToDisappear();
+        customWait.waitForElementToBeClickable(addToCartSecondBag);
+        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();", addToCartSecondBag);
         addToCartSecondBag.click();
     }
     public void  addToCartThirdBagMain(){
+        customWait.waitForSpinnerToDisappear();
+        customWait.waitForElementToBeClickable(addToCartThirdBag);
+        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();", addToCartThirdBag);
         addToCartThirdBag.click();
     }
     public void  addToCartFourthBagMain(){
+        customWait.waitForSpinnerToDisappear();
+        customWait.waitForElementToBeClickable(addToCartFourthBag);
+        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();", addToCartFourthBag);
         addToCartFourthBag.click();
     }
     public void  goToCheckoutMainHower() {
+        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();", addToCartFourthBag);
+        customWait.waitForElementToBeClickable(shoppingCartHoverButton);
+        customWait.waitForSpinnerToDisappear();
         shoppingCartHoverButton.click();
     }
     public void  goToCheckoutMainClick(){
