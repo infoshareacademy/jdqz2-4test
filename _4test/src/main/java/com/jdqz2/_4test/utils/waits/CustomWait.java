@@ -1,5 +1,6 @@
 package com.jdqz2._4test.utils.waits;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -37,4 +38,6 @@ CustomWait {
         WebDriverWait wait = new WebDriverWait(driver, EXPLICIT_WAIT_TIMEOUT);
         WebElement waitForElement = wait.until(ExpectedConditions.visibilityOf(element));
     }
+
+
 }
