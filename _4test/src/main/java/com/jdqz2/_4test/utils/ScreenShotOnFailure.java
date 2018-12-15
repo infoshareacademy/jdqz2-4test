@@ -1,6 +1,6 @@
 package com.jdqz2._4test.utils;
 
-import org.apache.commons.io.FileUtils;
+
 import org.junit.rules.TestWatcher;
 import org.junit.runner.Description;
 import org.openqa.selenium.OutputType;
@@ -33,6 +33,5 @@ public class ScreenShotOnFailure extends TestWatcher {
         File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         fileName += UUID.randomUUID().toString();
         File targetFile = new File("Screenshot/" + fileName + ".png");
-        FileUtils.copyFile(scrFile, targetFile);
     }
 }
