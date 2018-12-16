@@ -35,7 +35,7 @@ public class MainPage {
     @FindBy(xpath = "//section[@class = 'products-grid']")
     private WebElement loagingMainPageElement;
 
-    @FindBy(xpath = "//a[contains(@href, 'shop/product/chic-vintage-deville.html')]")
+    @FindBy(xpath = "//h3[@itemprop='name' and contains(text(),'Chic vintage DeVille')]")
     private WebElement firstBagImage;
 
     @FindBy(xpath = "//h2[contains(text(), 'Featured items')]")
@@ -88,13 +88,14 @@ public class MainPage {
         customWait.waitForSpinnerToDisappear();
         Actions builder = new Actions(driver);
         builder.moveToElement(shoppingCartHoverButton).moveToElement(shoppingCartHoverButton).build().perform();
-                customWait.waitForElementToBeClickable(goToCheckoutMainPage);
-        Thread.sleep(800);
+        customWait.waitForElementToBeClickable(goToCheckoutMainPage);
+        Thread.sleep(1000);
         goToCheckoutMainPage.click();
     }
 
     public void  goToFirstBagPage(){
         customWait.waitForSpinnerToDisappear();
+        customWait.waitForElementToBeClickable(firstBagImage);
         Assert.assertEquals(firstBagImage.isDisplayed(), true);
         ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();", firstBagImage);
         customWait.waitForElementToBeClickable(firstBagImage);

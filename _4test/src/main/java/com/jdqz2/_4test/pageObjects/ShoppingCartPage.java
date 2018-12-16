@@ -24,6 +24,9 @@ public class ShoppingCartPage {
     @FindBy(xpath = "//a[text() = 'Proceed to checkout']")
     private WebElement proceedButton;
 
+    @FindBy(xpath = "//span[contains(text(), 'Chic vintage DeVille')]")
+    private WebElement chicDevilleBagInCart;
+
     private CustomWait customWait;
 
     private WebDriver driver;
@@ -45,6 +48,10 @@ public class ShoppingCartPage {
         customWait.waitForElementToBeVisible(continueShoppingButton);
         customWait.waitForElementToBeClickable(continueShoppingButton);
         continueShoppingButton.click();
+    }
+    public boolean checkIfChicDevilleBagIsInCart() {
+        customWait.waitForElementToBeVisible(chicDevilleBagInCart);
+        return chicDevilleBagInCart.isDisplayed();
     }
 
 }

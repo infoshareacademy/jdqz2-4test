@@ -1,5 +1,6 @@
 package com.jdqz2._4test;
 
+import com.jdqz2._4test.pageObjects.ChicVintageDeVilleBagPage;
 import com.jdqz2._4test.pageObjects.MainPage;
 import com.jdqz2._4test.pageObjects.ShoppingCartPage;
 import com.jdqz2._4test.utils.driver.WebDriverCreators;
@@ -19,6 +20,7 @@ public class CartTest {
 
     private MainPage mainPage;
     private ShoppingCartPage shoppingCartPage;
+    private ChicVintageDeVilleBagPage chicVintageDeVilleBagPage;
 
     @BeforeClass
     public static void setDriver() {
@@ -53,12 +55,6 @@ public class CartTest {
         shoppingCartPage.continueShopping();
         assertTrue(mainPage.featuredItemsTextIsDisplayed());
     }
-//ToDo
-//    @Test
-//    public void AddItemsToCartFromBagPage(){
-//
-//    }
-
 
     @After
     public void tearDown() {

@@ -1,6 +1,8 @@
 package com.jdqz2._4test.pageObjects;
 
 import com.jdqz2._4test.utils.waits.CustomWait;
+import org.junit.Assert;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -19,6 +21,15 @@ public class ChicVintageDeVilleBagPage {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy (xpath = "//button[@class = 'btn addToCart addToCartButton btn-buy']")
+    @FindBy(xpath = "//button[@class = 'btn addToCart addToCartButton btn-buy']")
     private WebElement addToCartButton;
+
+
+
+    public void addToCartFromChicBagPage() {
+        customWait.waitForElementToBeClickable(addToCartButton);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", addToCartButton);
+        addToCartButton.click();
+    }
+
 }
