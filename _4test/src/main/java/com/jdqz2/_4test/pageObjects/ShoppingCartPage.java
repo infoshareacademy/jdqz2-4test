@@ -1,7 +1,11 @@
 package com.jdqz2._4test.pageObjects;
 
+import com.jdqz2._4test.utils.waits.CustomWait;
+import org.junit.Assert;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class ShoppingCartPage {
 
@@ -12,7 +16,7 @@ public class ShoppingCartPage {
     private WebElement removeItemCartPage;
 
     @FindBy(xpath = "//a[text() = 'Recalculate']")
-    private WebElement recalcutaeButton;
+    private WebElement recalculateButton;
 
     @FindBy(xpath = "//a[text() = 'Continue shopping']")
     private WebElement continueShoppingButton;
@@ -20,12 +24,34 @@ public class ShoppingCartPage {
     @FindBy(xpath = "//a[text() = 'Proceed to checkout']")
     private WebElement proceedButton;
 
-    @FindBy(xpath = "//span[@class = 'lnr lnr-cart']")
-    private WebElement hoverButtonCartMainPage;
+    @FindBy(xpath = "//span[contains(text(), 'Chic vintage DeVille')]")
+    private WebElement chicDevilleBagInCart;
 
-    @FindBy(xpath = "//button[@productid = '4']")
-    private WebElement removeProductFromCartMainPage;
+    private CustomWait customWait;
 
-    @FindBy(xpath = "//i[@class = 'fa fa-angle-right']")
-    private WebElement goToCheckoutMainPage;
+    private WebDriver driver;
+
+    public ShoppingCartPage(WebDriver driver) {
+        this.driver = driver;
+        customWait = new CustomWait(driver);
+        PageFactory.initElements(driver, this);
+    }
+
+    public boolean proceedButtonIsDisplayed(){
+        customWait.waitForElementToBeVisible(proceedButton);
+        proceedButton.isDisplayed();
+        return proceedButton.isDisplayed();
+    }
+
+    public void continueShopping(){
+        //customWait.waitForSpinnerToDisappear();
+        customWait.waitForElementToBeVisible(continueShoppingButton);
+        customWait.waitForElementToBeClickable(continueShoppingButton);
+        continueShoppingButton.click();
+    }
+    public boolean checkIfChicDevilleBagIsInCart() {
+        customWait.waitForElementToBeVisible(chicDevilleBagInCart);
+        return chicDevilleBagInCart.isDisplayed();
+    }
+
 }

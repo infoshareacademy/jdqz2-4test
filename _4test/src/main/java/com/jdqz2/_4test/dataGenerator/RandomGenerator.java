@@ -26,6 +26,7 @@ public class RandomGenerator {
         if (list.size() == 1) {
             return list.get(0);
         }
+
         return list.get(random.nextInt(list.size()-1));
     }
 }
