@@ -46,6 +46,32 @@ public class MainPage {
     @FindBy(xpath = "//input[@id = 'searchField']")
     private WebElement searchField;
 
+    @FindBy(xpath = "//a[text() = 'Handbags']")
+    private WebElement handbagsButton;
+
+    @FindBy(xpath = "//a[text() = 'Beach bags']")
+    private WebElement beachBagsButton;
+
+    @FindBy(xpath = "//a[text() = 'Laptop bags']")
+    private WebElement laptopBagsButton;
+
+    @FindBy(xpath = "//a[text() = 'Bags']")
+    private WebElement bagsButton;
+
+    @FindBy(xpath = "//h2[text() = 'Handbags']" )
+    private WebElement handbagsBanner;
+
+    @FindBy(xpath = "//h2[text() = 'Beach bags']" )
+    private WebElement beachBagsBanner;
+
+    @FindBy(xpath = "//h2[text() = 'Bags']" )
+    private WebElement bagsBanner;
+
+    @FindBy(xpath = "//h2[text() = 'Laptop bags']" )
+    private WebElement laptopBagsBanner;
+
+    @FindBy(xpath = "//div[@class = 'loadingoverlay']")
+    private WebElement loadingSpinner;
 
     private CustomWait customWait;
 
@@ -119,4 +145,31 @@ public class MainPage {
         return featuredItemsText.isDisplayed();
     }
 
+
+    public void buttonsTest(){
+
+        customWait.waitForElementToBeClickable(handbagsButton);
+        handbagsButton.click();
+        customWait.waitForElementToBeVisible(handbagsBanner);
+        customWait.waitForSpinnerToDisappear();
+        Assert.assertEquals(handbagsBanner.isDisplayed(), true);
+        customWait.waitForElementToBeClickable(beachBagsButton);
+        beachBagsButton.click();
+        customWait.waitForSpinnerToDisappear();
+        Assert.assertEquals(beachBagsBanner.isDisplayed(), true);
+        bagsButton.click();
+        customWait.waitForSpinnerToDisappear();
+        Assert.assertEquals(bagsBanner.isDisplayed(), true);
+        laptopBagsButton.click();
+        customWait.waitForSpinnerToDisappear();
+        Assert.assertEquals(laptopBagsBanner.isDisplayed(), true);
+
+    }
+
+
+
+
+
 }
+
+
