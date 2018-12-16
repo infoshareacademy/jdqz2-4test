@@ -10,7 +10,7 @@ public class RegistrationDataGenerator extends RandomGenerator {
     public RegistrationDataGenerator() {
     }
 
-    public RegistrationFormData generate(){
+    public RegistrationFormData generate() {
         RegistrationFormData rData = new RegistrationFormData();
 
         rData.setFirstName(getRandom(firstNameList))
