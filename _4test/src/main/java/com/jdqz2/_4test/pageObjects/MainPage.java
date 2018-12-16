@@ -41,6 +41,12 @@ public class MainPage {
     @FindBy(xpath = "//h2[contains(text(), 'Featured items')]")
     private WebElement featuredItemsText;
 
+    @FindBy(xpath = "//button[@class = 'btn-default searchButton']")
+    private WebElement searchButton;
+    @FindBy(xpath = "//input[@id = 'searchField']")
+    private WebElement searchField;
+
+
     private CustomWait customWait;
 
     private WebDriver driver;
@@ -51,6 +57,12 @@ public class MainPage {
         customWait = new CustomWait(driver);
         PageFactory.initElements(driver, this);
     }
+
+    public void searchFieldTest(String text) {
+        searchField.sendKeys(text);
+        searchButton.click();
+    }
+
     public void  addToCartFirstBagMain() {
         customWait.waitForSpinnerToDisappear();
         customWait.waitForElementToBeClickable(addToCartFirstBag);

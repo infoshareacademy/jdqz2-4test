@@ -9,8 +9,6 @@ import com.jdqz2._4test.utils.waits.CustomWait;
 import org.junit.*;
 import org.openqa.selenium.WebDriver;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 public class CartTest {
@@ -22,13 +20,9 @@ public class CartTest {
     private ShoppingCartPage shoppingCartPage;
     private ChicVintageDeVilleBagPage chicVintageDeVilleBagPage;
 
-    @BeforeClass
-    public static void setDriver() {
-        driver = new WebDriverProvider(WebDriverCreators.CHROME).getDriver();
-    }
-
     @Before
     public void setUp() {
+        driver = new WebDriverProvider(WebDriverCreators.CHROME).getDriver();
         customWait = new CustomWait(driver);
         driver.manage().window().maximize();
         mainPage = new MainPage(driver);

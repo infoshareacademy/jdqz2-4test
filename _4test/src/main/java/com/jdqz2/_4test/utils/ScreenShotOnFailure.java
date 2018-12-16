@@ -33,6 +33,5 @@ public class ScreenShotOnFailure extends TestWatcher {
         File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         fileName += UUID.randomUUID().toString();
         File targetFile = new File("Screenshot/" + fileName + ".png");
-        FileUtils.copyFile(scrFile, targetFile);
     }
 }
