@@ -41,11 +41,13 @@ CustomWait {
         WebElement waitForElement = wait.until(ExpectedConditions.visibilityOf(element));
     }
 
-    public void waitForSpinnerDisappear(){
-        WebDriverWait wait = new WebDriverWait(driver, SPINNER_CLOSE_WAIT);
-        Boolean waitForElement = wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//div[@class = 'loadingoverlay']")));
+    public void waitForElementToDisappear(WebElement element){
+        WebDriverWait wait = new WebDriverWait(driver, EXPLICIT_WAIT_TIMEOUT);
+        wait.until(ExpectedConditions.invisibilityOf(element));
+    }
 
-
+    public void waitForSpinnerToDisappear() {
+        waitForElementToDisappear(driver.findElement(By.className("loadingoverlay")));
     }
 
 

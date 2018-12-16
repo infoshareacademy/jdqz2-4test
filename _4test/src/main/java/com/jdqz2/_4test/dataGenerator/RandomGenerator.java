@@ -19,6 +19,14 @@ public class RandomGenerator {
     public ArrayList<String> stateProvinceList = new ArrayList<>(Arrays.asList("State1","State2","State3","State4","Province1","Province2"));
     public ArrayList<String> passwordList = new ArrayList<>(Arrays.asList("password1","password2","password3","password4","password5","password6"));
     public String getRandom(ArrayList<String> list){
+        if (list.size() < 1){
+            return null;
+        }
+
+        if (list.size() == 1) {
+            return list.get(0);
+        }
+
         return list.get(random.nextInt(list.size()-1));
     }
 }

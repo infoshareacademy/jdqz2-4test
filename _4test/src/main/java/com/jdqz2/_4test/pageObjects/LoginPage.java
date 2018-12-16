@@ -2,6 +2,7 @@ package com.jdqz2._4test.pageObjects;
 
 import com.jdqz2._4test.dataGenerator.LoginTestFormData;
 import com.jdqz2._4test.utils.waits.CustomWait;
+
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
